@@ -1,0 +1,9 @@
+{ 
+	"version": "1.0.0",
+	"plugins": [
+      "gitbook-plugin-yahei"
+    ],
+	"plugins": [
+      "gitbook-plugin-betterchinese"
+	],
+}
