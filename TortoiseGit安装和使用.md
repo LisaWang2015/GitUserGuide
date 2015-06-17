@@ -1,10 +1,13 @@
 # TortoiseGit安装和使用 #
+
 TortoiseGit是Windows下不错的一款Git客户端工具，在Mac下推荐使用sourcetree。下面就介绍一下TortoiseGit安装和使用的方法。
 安装TortoiseGit并使用它需要两个软件：TortoiseGit和msysgit。
+
 ## 软件下载 ##
 TortoiseGit官网下载地址：http://download.tortoisegit.org/tgit/1.8.14.0/
 msysGit官网下载地址：http://msysgit.github.io/ 
 ![](http://i.imgur.com/Y0IpLwK.png)
+
 >下载最新版本时注意，msysGit选“Git for Windows”，TortoiseGit区分64bit和32bit，并选择附带的语言包。
 
 下载的版本分别是：TortoiseGit-1.8.9.0-32bit.msi和TortoiseGit-LanguagePack-1.8.9.0-32bit-zh_CN，以及 Git-1.9.4-preview20140815.exe
@@ -16,7 +19,8 @@ msysGit官网下载地址：http://msysgit.github.io/
 ![](http://i.imgur.com/KkaS6AV.png)
 
 ## 使用TortoiseGit ##
-先在TortoiseGit安装目录里面找到Settings，打开界面，找到General，点击“Check now”按钮，可以看到当前git版本。这时候说明，你的配置已经OK，可以开始进行下一步的操作了。
+
+先在TortoiseGit安装目录里面找到"Settings"，打开界面，找到"General"，点击“Check now”按钮，可以看到当前git版本。这时候说明，你的配置已经OK，可以开始进行下一步的操作了。   
 ![](http://i.imgur.com/qG1HemQ.png)
 ![](http://i.imgur.com/GnXFgfw.png)
 
