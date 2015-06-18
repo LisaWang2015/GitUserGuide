@@ -1,0 +1,801 @@
+<!DOCTYPE HTML>
+<html lang="en" >
+    
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>版本回退 | Git教程</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 2.1.0">
+        
+        
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+        
+    <link rel="stylesheet" href="../gitbook/style.css">
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-yahei/yahei.css">
+        
+    
+    
+
+        
+    
+    
+    <link rel="next" href="../时光机穿梭/工作区和暂存区.html" />
+    
+    
+    <link rel="prev" href="../时光机穿梭.html" />
+    
+
+        
+    </head>
+    <body>
+        
+        
+    <div class="book" data-level="4.1" data-basepath=".." data-revision="Thu Jun 18 2015 11:54:14 GMT+0800 (中国标准时间)">
+    
+
+<div class="book-summary">
+    <div class="book-search">
+        <input type="text" placeholder="Type to search" class="form-control" />
+    </div>
+    <ul class="summary">
+        
+        
+        
+        
+
+        
+
+        
+    
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="../index.html">
+                        <i class="fa fa-check"></i>
+                        
+                        引言
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1" data-path="Git简介.html">
+            
+                
+                    <a href="../Git简介.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.</b>
+                        
+                        Git简介
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1" data-path="Git简介/Git的诞生.html">
+            
+                
+                    <a href="../Git简介/Git的诞生.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.</b>
+                        
+                        Git的诞生
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="Git简介/集中式vs分布式.html">
+            
+                
+                    <a href="../Git简介/集中式vs分布式.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.2.</b>
+                        
+                        集中式vs分布式
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2" data-path="Git安装.html">
+            
+                
+                    <a href="../Git安装.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.</b>
+                        
+                        Git安装
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3" data-path="版本库创建.html">
+            
+                
+                    <a href="../版本库创建.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.</b>
+                        
+                        版本库创建
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4" data-path="时光机穿梭.html">
+            
+                
+                    <a href="../时光机穿梭.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.</b>
+                        
+                        时光机穿梭
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="4.1" data-path="时光机穿梭/版本回退.html">
+            
+                
+                    <a href="../时光机穿梭/版本回退.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.1.</b>
+                        
+                        版本回退
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="时光机穿梭/工作区和暂存区.html">
+            
+                
+                    <a href="../时光机穿梭/工作区和暂存区.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.2.</b>
+                        
+                        工作区和暂存区
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3" data-path="时光机穿梭/管理修改.html">
+            
+                
+                    <a href="../时光机穿梭/管理修改.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.3.</b>
+                        
+                        管理修改
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4" data-path="时光机穿梭/撤销修改.html">
+            
+                
+                    <a href="../时光机穿梭/撤销修改.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.4.</b>
+                        
+                        撤销修改
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.5" data-path="时光机穿梭/文件删除.html">
+            
+                
+                    <a href="../时光机穿梭/文件删除.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.5.</b>
+                        
+                        文件删除
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="5" data-path="远程仓库.html">
+            
+                
+                    <a href="../远程仓库.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.</b>
+                        
+                        远程仓库
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.1" data-path="远程仓库/添加远程库.html">
+            
+                
+                    <a href="../远程仓库/添加远程库.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.1.</b>
+                        
+                        添加远程库
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" data-path="远程仓库/从远程库克隆.html">
+            
+                
+                    <a href="../远程仓库/从远程库克隆.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.2.</b>
+                        
+                        从远程库克隆
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="6" data-path="分支管理.html">
+            
+                
+                    <a href="../分支管理.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.</b>
+                        
+                        分支管理
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="6.1" data-path="分支管理/创建与合并分支.html">
+            
+                
+                    <a href="../分支管理/创建与合并分支.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.1.</b>
+                        
+                        创建与合并分支
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2" data-path="分支管理/解决冲突.html">
+            
+                
+                    <a href="../分支管理/解决冲突.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.2.</b>
+                        
+                        解决冲突
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.3" data-path="分支管理/分支管理策略.html">
+            
+                
+                    <a href="../分支管理/分支管理策略.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.3.</b>
+                        
+                        分支管理策略
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.4" data-path="分支管理/Bug分支.html">
+            
+                
+                    <a href="../分支管理/Bug分支.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.4.</b>
+                        
+                        Bug分支
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.5" data-path="分支管理/Feature分支.html">
+            
+                
+                    <a href="../分支管理/Feature分支.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.5.</b>
+                        
+                        Feature分支
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.6" data-path="分支管理/多人协作.html">
+            
+                
+                    <a href="../分支管理/多人协作.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.6.</b>
+                        
+                        多人协作
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="7" data-path="标签管理.html">
+            
+                
+                    <a href="../标签管理.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.</b>
+                        
+                        标签管理
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="7.1" data-path="标签管理/创建标签.html">
+            
+                
+                    <a href="../标签管理/创建标签.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.1.</b>
+                        
+                        创建标签
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="7.2" data-path="标签管理/操作标签.html">
+            
+                
+                    <a href="../标签管理/操作标签.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.2.</b>
+                        
+                        操作标签
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="8" data-path="GitHub使用.html">
+            
+                
+                    <a href="../GitHub使用.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.</b>
+                        
+                        GitHub使用
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="9" data-path="自定义Git.html">
+            
+                
+                    <a href="../自定义Git.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>9.</b>
+                        
+                        自定义Git
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="9.1" data-path="自定义Git/忽略特殊文件.html">
+            
+                
+                    <a href="../自定义Git/忽略特殊文件.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>9.1.</b>
+                        
+                        忽略特殊文件
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="9.2" data-path="自定义Git/配置别名.html">
+            
+                
+                    <a href="../自定义Git/配置别名.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>9.2.</b>
+                        
+                        配置别名
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="9.3" data-path="自定义Git/Git服务器搭建.html">
+            
+                
+                    <a href="../自定义Git/Git服务器搭建.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>9.3.</b>
+                        
+                        Git服务器搭建
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="10" data-path="期末总结.html">
+            
+                
+                    <a href="../期末总结.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>10.</b>
+                        
+                        期末总结
+                    </a>
+                
+            
+            
+        </li>
+    
+
+
+        
+        <li class="divider"></li>
+        <li>
+            <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                Published with GitBook
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header">
+    <!-- Actions Left -->
+    <a href="#" class="btn pull-left toggle-summary" aria-label="Table of Contents"><i class="fa fa-align-justify"></i></a>
+    <a href="#" class="btn pull-left toggle-search" aria-label="Search"><i class="fa fa-search"></i></a>
+    
+    <div id="font-settings-wrapper" class="dropdown pull-left">
+        <a href="#" class="btn toggle-dropdown" aria-label="Font Settings"><i class="fa fa-font"></i>
+        </a>
+        <div class="dropdown-menu font-settings">
+    <div class="dropdown-caret">
+        <span class="caret-outer"></span>
+        <span class="caret-inner"></span>
+    </div>
+
+    <div class="buttons">
+        <button type="button" id="reduce-font-size" class="button size-2">A</button>
+        <button type="button" id="enlarge-font-size" class="button size-2">A</button>
+    </div>
+
+    <div class="buttons font-family-list">
+        <button type="button" data-font="0" class="button">Serif</button>
+        <button type="button" data-font="1" class="button">Sans</button>
+    </div>
+
+    <div class="buttons color-theme-list">
+        <button type="button" id="color-theme-preview-0" class="button size-3" data-theme="0">White</button>
+        <button type="button" id="color-theme-preview-1" class="button size-3" data-theme="1">Sepia</button>
+        <button type="button" id="color-theme-preview-2" class="button size-3" data-theme="2">Night</button>
+    </div>
+</div>
+
+    </div>
+
+    <!-- Actions Right -->
+    
+    <div class="dropdown pull-right">
+        <a href="#" class="btn toggle-dropdown" aria-label="Share"><i class="fa fa-share-alt"></i>
+        </a>
+        <div class="dropdown-menu font-settings dropdown-left">
+            <div class="dropdown-caret">
+                <span class="caret-outer"></span>
+                <span class="caret-inner"></span>
+            </div>
+            <div class="buttons">
+                <button type="button" data-sharing="twitter" class="button">
+                    Share on Twitter
+                </button>
+                <button type="button" data-sharing="google-plus" class="button">
+                    Share on Google
+                </button>
+                <button type="button" data-sharing="facebook" class="button">
+                    Share on Facebook
+                </button>
+                <button type="button" data-sharing="weibo" class="button">
+                    Share on Weibo
+                </button>
+                <button type="button" data-sharing="instapaper" class="button">
+                    Share on Instapaper
+                </button>
+            </div>
+        </div>
+    </div>
+    
+
+    
+    <a href="#" target="_blank" class="btn pull-right google-plus-sharing-link sharing-link" data-sharing="google-plus" aria-label="Google"><i class="fa fa-google-plus"></i></a>
+    
+    
+    <a href="#" target="_blank" class="btn pull-right facebook-sharing-link sharing-link" data-sharing="facebook" aria-label="Facebook"><i class="fa fa-facebook"></i></a>
+    
+    
+    <a href="#" target="_blank" class="btn pull-right twitter-sharing-link sharing-link" data-sharing="twitter" aria-label="Twitter"><i class="fa fa-twitter"></i></a>
+    
+    
+    
+
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../" >Git教程</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-">
+                    
+                        <h1 id="%E7%89%88%E6%9C%AC%E5%9B%9E%E9%80%80">&#x7248;&#x672C;&#x56DE;&#x9000;</h1>
+<p>&#x73B0;&#x5728;&#xFF0C;&#x4F60;&#x5DF2;&#x7ECF;&#x5B66;&#x4F1A;&#x4E86;&#x4FEE;&#x6539;&#x6587;&#x4EF6;&#xFF0C;&#x7136;&#x540E;&#x628A;&#x4FEE;&#x6539;&#x63D0;&#x4EA4;&#x5230;Git&#x7248;&#x672C;&#x5E93;&#xFF0C;&#x73B0;&#x5728;&#xFF0C;&#x518D;&#x7EC3;&#x4E60;&#x4E00;&#x6B21;&#xFF0C;&#x4FEE;&#x6539;<strong>readme.txt</strong>&#x6587;&#x4EF6;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code>Git is a distributed version control system.
+Git is free software distributed under the GPL.
+</code></pre><p>&#x7136;&#x540E;&#x5C1D;&#x8BD5;&#x63D0;&#x4EA4;&#xFF1A;</p>
+<pre><code>$ git add readme.txt
+$ git commit -m &quot;append GPL&quot;
+[master 3628164] append GPL
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+</code></pre><p>&#x50CF;&#x8FD9;&#x6837;&#xFF0C;&#x4F60;&#x4E0D;&#x65AD;&#x5BF9;&#x6587;&#x4EF6;&#x8FDB;&#x884C;&#x4FEE;&#x6539;&#xFF0C;&#x7136;&#x540E;&#x4E0D;&#x65AD;&#x63D0;&#x4EA4;&#x4FEE;&#x6539;&#x5230;&#x7248;&#x672C;&#x5E93;&#x91CC;&#xFF0C;&#x5C31;&#x597D;&#x6BD4;&#x73A9;RPG&#x6E38;&#x620F;&#x65F6;&#xFF0C;&#x6BCF;&#x901A;&#x8FC7;&#x4E00;&#x5173;&#x5C31;&#x4F1A;&#x81EA;&#x52A8;&#x628A;&#x6E38;&#x620F;&#x72B6;&#x6001;&#x5B58;&#x76D8;&#xFF0C;&#x5982;&#x679C;&#x67D0;&#x4E00;&#x5173;&#x6CA1;&#x8FC7;&#x53BB;&#xFF0C;&#x4F60;&#x8FD8;&#x53EF;&#x4EE5;&#x9009;&#x62E9;&#x8BFB;&#x53D6;&#x524D;&#x4E00;&#x5173;&#x7684;&#x72B6;&#x6001;&#x3002;&#x6709;&#x4E9B;&#x65F6;&#x5019;&#xFF0C;&#x5728;&#x6253;Boss&#x4E4B;&#x524D;&#xFF0C;&#x4F60;&#x4F1A;&#x624B;&#x52A8;&#x5B58;&#x76D8;&#xFF0C;&#x4EE5;&#x4FBF;&#x4E07;&#x4E00;&#x6253;Boss&#x5931;&#x8D25;&#x4E86;&#xFF0C;&#x53EF;&#x4EE5;&#x4ECE;&#x6700;&#x8FD1;&#x7684;&#x5730;&#x65B9;&#x91CD;&#x65B0;&#x5F00;&#x59CB;&#x3002;Git&#x4E5F;&#x662F;&#x4E00;&#x6837;&#xFF0C;&#x6BCF;&#x5F53;&#x4F60;&#x89C9;&#x5F97;&#x6587;&#x4EF6;&#x4FEE;&#x6539;&#x5230;&#x4E00;&#x5B9A;&#x7A0B;&#x5EA6;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x5C31;&#x53EF;&#x4EE5;&#x201C;&#x4FDD;&#x5B58;&#x4E00;&#x4E2A;&#x5FEB;&#x7167;&#x201D;&#xFF0C;&#x8FD9;&#x4E2A;&#x5FEB;&#x7167;&#x5728;Git&#x4E2D;&#x88AB;&#x79F0;&#x4E3A;<code>commit</code>&#x3002;&#x4E00;&#x65E6;&#x4F60;&#x628A;&#x6587;&#x4EF6;&#x6539;&#x4E71;&#x4E86;&#xFF0C;&#x6216;&#x8005;&#x8BEF;&#x5220;&#x4E86;&#x6587;&#x4EF6;&#xFF0C;&#x8FD8;&#x53EF;&#x4EE5;&#x4ECE;&#x6700;&#x8FD1;&#x7684;&#x4E00;&#x4E2A;<code>commit</code>&#x6062;&#x590D;&#xFF0C;&#x7136;&#x540E;&#x7EE7;&#x7EED;&#x5DE5;&#x4F5C;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x628A;&#x51E0;&#x4E2A;&#x6708;&#x7684;&#x5DE5;&#x4F5C;&#x6210;&#x679C;&#x5168;&#x90E8;&#x4E22;&#x5931;&#x3002;</p>
+<p>&#x73B0;&#x5728;&#xFF0C;&#x6211;&#x4EEC;&#x56DE;&#x987E;&#x4E00;&#x4E0B;<strong>readme.txt</strong>&#x6587;&#x4EF6;&#x4E00;&#x5171;&#x6709;&#x51E0;&#x4E2A;&#x7248;&#x672C;&#x88AB;&#x63D0;&#x4EA4;&#x5230;Git&#x4ED3;&#x5E93;&#x91CC;&#x4E86;&#xFF1A;</p>
+<p>&#x7248;&#x672C;1&#xFF1A;&#x201C;wrote a readme file&#x201D;</p>
+<pre><code>Git is a version control system.
+Git is free software.
+</code></pre><p>&#x7248;&#x672C;2&#xFF1A;&#x201C;add distributed&#x201D;</p>
+<pre><code>Git is a distributed version control system.
+Git is free software.
+</code></pre><p>&#x7248;&#x672C;3&#xFF1A;&#x201C;append GPL&#x201D;</p>
+<pre><code>Git is a distributed version control system.
+Git is free software distributed under the GPL.
+</code></pre><p>&#x5F53;&#x7136;&#x4E86;&#xFF0C;&#x5728;&#x5B9E;&#x9645;&#x5DE5;&#x4F5C;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x8111;&#x5B50;&#x91CC;&#x600E;&#x4E48;&#x53EF;&#x80FD;&#x8BB0;&#x5F97;&#x4E00;&#x4E2A;&#x51E0;&#x5343;&#x884C;&#x7684;&#x6587;&#x4EF6;&#x6BCF;&#x6B21;&#x90FD;&#x6539;&#x4E86;&#x4EC0;&#x4E48;&#x5185;&#x5BB9;&#xFF0C;&#x4E0D;&#x7136;&#x8981;&#x7248;&#x672C;&#x63A7;&#x5236;&#x7CFB;&#x7EDF;&#x5E72;&#x4EC0;&#x4E48;&#x3002;&#x7248;&#x672C;&#x63A7;&#x5236;&#x7CFB;&#x7EDF;&#x80AF;&#x5B9A;&#x6709;&#x67D0;&#x4E2A;&#x547D;&#x4EE4;&#x53EF;&#x4EE5;&#x544A;&#x8BC9;&#x6211;&#x4EEC;&#x5386;&#x53F2;&#x8BB0;&#x5F55;&#xFF0C;&#x5728;Git&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x7528;<code>git log</code>&#x547D;&#x4EE4;&#x67E5;&#x770B;&#xFF1A;</p>
+<pre><code>$ git log
+commit 3628164fb26d48395383f8f31179f24e0882e1e0
+Author: Michael Liao &lt;askxuefeng@gmail.com&gt;
+Date:   Tue Aug 20 15:11:49 2013 +0800
+
+    append GPL
+
+commit ea34578d5496d7dd233c827ed32a8cd576c5ee85
+Author: Michael Liao &lt;askxuefeng@gmail.com&gt;
+Date:   Tue Aug 20 14:53:12 2013 +0800
+
+    add distributed
+
+commit cb926e7ea50ad11b8f9e909c05226233bf755030
+Author: Michael Liao &lt;askxuefeng@gmail.com&gt;
+Date:   Mon Aug 19 17:51:55 2013 +0800
+
+    wrote a readme file
+</code></pre><p><code>git log</code>&#x547D;&#x4EE4;&#x663E;&#x793A;&#x4ECE;&#x6700;&#x8FD1;&#x5230;&#x6700;&#x8FDC;&#x7684;&#x63D0;&#x4EA4;&#x65E5;&#x5FD7;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x770B;&#x5230;3&#x6B21;&#x63D0;&#x4EA4;&#xFF0C;&#x6700;&#x8FD1;&#x7684;&#x4E00;&#x6B21;&#x662F;<code>append GPL</code>&#xFF0C;&#x4E0A;&#x4E00;&#x6B21;&#x662F;<code>add distributed</code>&#xFF0C;&#x6700;&#x65E9;&#x7684;&#x4E00;&#x6B21;&#x662F;<code>wrote a readme file</code>&#x3002;
+&#x5982;&#x679C;&#x5ACC;&#x8F93;&#x51FA;&#x4FE1;&#x606F;&#x592A;&#x591A;&#xFF0C;&#x770B;&#x5F97;&#x773C;&#x82B1;&#x7F2D;&#x4E71;&#x7684;&#xFF0C;&#x53EF;&#x4EE5;&#x8BD5;&#x8BD5;&#x52A0;&#x4E0A;<code>--pretty=oneline</code>&#x53C2;&#x6570;&#xFF1A;</p>
+<pre><code>$ git log --pretty=oneline
+3628164fb26d48395383f8f31179f24e0882e1e0 append GPL
+ea34578d5496d7dd233c827ed32a8cd576c5ee85 add distributed
+cb926e7ea50ad11b8f9e909c05226233bf755030 wrote a readme file
+</code></pre><p>&#x9700;&#x8981;&#x53CB;&#x60C5;&#x63D0;&#x793A;&#x7684;&#x662F;&#xFF0C;&#x4F60;&#x770B;&#x5230;&#x7684;&#x4E00;&#x5927;&#x4E32;&#x7C7B;&#x4F3C;<code>3628164...882e1e0</code>&#x7684;&#x662F;<code>commit id</code>&#xFF08;&#x7248;&#x672C;&#x53F7;&#xFF09;&#xFF0C;&#x548C;SVN&#x4E0D;&#x4E00;&#x6837;&#xFF0C;Git&#x7684;<code>commit id</code>&#x4E0D;&#x662F;1&#xFF0C;2&#xFF0C;3&#x2026;&#x2026;&#x9012;&#x589E;&#x7684;&#x6570;&#x5B57;&#xFF0C;&#x800C;&#x662F;&#x4E00;&#x4E2A;SHA1&#x8BA1;&#x7B97;&#x51FA;&#x6765;&#x7684;&#x4E00;&#x4E2A;&#x975E;&#x5E38;&#x5927;&#x7684;&#x6570;&#x5B57;&#xFF0C;&#x7528;&#x5341;&#x516D;&#x8FDB;&#x5236;&#x8868;&#x793A;&#xFF0C;&#x800C;&#x4E14;&#x4F60;&#x770B;&#x5230;&#x7684;<code>commit id</code>&#x548C;&#x6211;&#x7684;&#x80AF;&#x5B9A;&#x4E0D;&#x4E00;&#x6837;&#xFF0C;&#x4EE5;&#x4F60;&#x81EA;&#x5DF1;&#x7684;&#x4E3A;&#x51C6;&#x3002;&#x4E3A;&#x4EC0;&#x4E48;<code>commit id</code>&#x9700;&#x8981;&#x7528;&#x8FD9;&#x4E48;&#x4E00;&#x5927;&#x4E32;&#x6570;&#x5B57;&#x8868;&#x793A;&#x5462;&#xFF1F;&#x56E0;&#x4E3A;Git&#x662F;&#x5206;&#x5E03;&#x5F0F;&#x7684;&#x7248;&#x672C;&#x63A7;&#x5236;&#x7CFB;&#x7EDF;&#xFF0C;&#x540E;&#x9762;&#x6211;&#x4EEC;&#x8FD8;&#x8981;&#x7814;&#x7A76;&#x591A;&#x4EBA;&#x5728;&#x540C;&#x4E00;&#x4E2A;&#x7248;&#x672C;&#x5E93;&#x91CC;&#x5DE5;&#x4F5C;&#xFF0C;&#x5982;&#x679C;&#x5927;&#x5BB6;&#x90FD;&#x7528;1&#xFF0C;2&#xFF0C;3&#x2026;&#x2026;&#x4F5C;&#x4E3A;&#x7248;&#x672C;&#x53F7;&#xFF0C;&#x90A3;&#x80AF;&#x5B9A;&#x5C31;&#x51B2;&#x7A81;&#x4E86;&#x3002;</p>
+<p>&#x6BCF;&#x63D0;&#x4EA4;&#x4E00;&#x4E2A;&#x65B0;&#x7248;&#x672C;&#xFF0C;&#x5B9E;&#x9645;&#x4E0A;Git&#x5C31;&#x4F1A;&#x628A;&#x5B83;&#x4EEC;&#x81EA;&#x52A8;&#x4E32;&#x6210;&#x4E00;&#x6761;&#x65F6;&#x95F4;&#x7EBF;&#x3002;&#x5982;&#x679C;&#x4F7F;&#x7528;&#x53EF;&#x89C6;&#x5316;&#x5DE5;&#x5177;&#x67E5;&#x770B;Git&#x5386;&#x53F2;&#xFF0C;&#x5C31;&#x53EF;&#x4EE5;&#x66F4;&#x6E05;&#x695A;&#x5730;&#x770B;&#x5230;&#x63D0;&#x4EA4;&#x5386;&#x53F2;&#x7684;&#x65F6;&#x95F4;&#x7EBF;&#xFF1A;</p>
+<p><img src="http://i.imgur.com/6koeTdL.jpg" alt="git-log-timeline"></p>
+<p>&#x597D;&#x4E86;&#xFF0C;&#x73B0;&#x5728;&#x6211;&#x4EEC;&#x542F;&#x52A8;&#x65F6;&#x5149;&#x7A7F;&#x68AD;&#x673A;&#xFF0C;&#x51C6;&#x5907;&#x628A;<strong>readme.txt</strong>&#x56DE;&#x9000;&#x5230;&#x4E0A;&#x4E00;&#x4E2A;&#x7248;&#x672C;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x201C;add distributed&#x201D;&#x7684;&#x90A3;&#x4E2A;&#x7248;&#x672C;&#xFF0C;&#x600E;&#x4E48;&#x505A;&#x5462;&#xFF1F;</p>
+<p>&#x9996;&#x5148;&#xFF0C;Git&#x5FC5;&#x987B;&#x77E5;&#x9053;&#x5F53;&#x524D;&#x7248;&#x672C;&#x662F;&#x54EA;&#x4E2A;&#x7248;&#x672C;&#xFF0C;&#x5728;Git&#x4E2D;&#xFF0C;&#x7528;<code>HEAD</code>&#x8868;&#x793A;&#x5F53;&#x524D;&#x7248;&#x672C;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x6700;&#x65B0;&#x7684;&#x63D0;&#x4EA4;<code>3628164...882e1e0</code>&#xFF08;&#x6CE8;&#x610F;&#x6211;&#x7684;&#x63D0;&#x4EA4;ID&#x548C;&#x4F60;&#x7684;&#x80AF;&#x5B9A;&#x4E0D;&#x4E00;&#x6837;&#xFF09;&#xFF0C;&#x4E0A;&#x4E00;&#x4E2A;&#x7248;&#x672C;&#x5C31;&#x662F;<code>HEAD^</code>&#xFF0C;&#x4E0A;&#x4E0A;&#x4E00;&#x4E2A;&#x7248;&#x672C;&#x5C31;&#x662F;<code>HEAD^^</code>&#xFF0C;&#x5F53;&#x7136;&#x5F80;&#x4E0A;100&#x4E2A;&#x7248;&#x672C;&#x5199;100&#x4E2A;^&#x6BD4;&#x8F83;&#x5BB9;&#x6613;&#x6570;&#x4E0D;&#x8FC7;&#x6765;&#xFF0C;&#x6240;&#x4EE5;&#x5199;&#x6210;<code>HEAD~100</code>&#x3002;</p>
+<p>&#x73B0;&#x5728;&#xFF0C;&#x6211;&#x4EEC;&#x8981;&#x628A;&#x5F53;&#x524D;&#x7248;&#x672C;&#x201C;append GPL&#x201D;&#x56DE;&#x9000;&#x5230;&#x4E0A;&#x4E00;&#x4E2A;&#x7248;&#x672C;&#x201C;add distributed&#x201D;&#xFF0C;&#x5C31;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;<code>git reset</code>&#x547D;&#x4EE4;&#xFF1A;</p>
+<pre><code>$ git reset --hard HEAD^
+HEAD is now at ea34578 add distributed
+</code></pre><p><code>--hard</code>&#x53C2;&#x6570;&#x6709;&#x5565;&#x610F;&#x4E49;&#xFF1F;&#x8FD9;&#x4E2A;&#x540E;&#x9762;&#x518D;&#x8BB2;&#xFF0C;&#x73B0;&#x5728;&#x4F60;&#x5148;&#x653E;&#x5FC3;&#x4F7F;&#x7528;&#x3002;</p>
+<p>&#x770B;&#x770B;<strong>readme.txt</strong>&#x7684;&#x5185;&#x5BB9;&#x662F;&#x4E0D;&#x662F;&#x7248;&#x672C;&#x201C;add distributed&#x201D;&#xFF1A;</p>
+<pre><code>$ cat readme.txt
+Git is a distributed version control system.
+Git is free software.
+</code></pre><p>&#x679C;&#x7136;&#x3002;</p>
+<p>&#x8FD8;&#x53EF;&#x4EE5;&#x7EE7;&#x7EED;&#x56DE;&#x9000;&#x5230;&#x4E0A;&#x4E00;&#x4E2A;&#x7248;&#x672C;&#x201C;wrote a readme file&#x201D;&#xFF0C;&#x4E0D;&#x8FC7;&#x4E14;&#x6162;&#xFF0C;&#x7136;&#x6211;&#x4EEC;&#x7528;<code>git log</code>&#x518D;&#x770B;&#x770B;&#x73B0;&#x5728;&#x7248;&#x672C;&#x5E93;&#x7684;&#x72B6;&#x6001;&#xFF1A;</p>
+<pre><code>$ git log
+commit ea34578d5496d7dd233c827ed32a8cd576c5ee85
+Author: Michael Liao &lt;askxuefeng@gmail.com&gt;
+Date:   Tue Aug 20 14:53:12 2013 +0800
+
+    add distributed
+
+commit cb926e7ea50ad11b8f9e909c05226233bf755030
+Author: Michael Liao &lt;askxuefeng@gmail.com&gt;
+Date:   Mon Aug 19 17:51:55 2013 +0800
+
+    wrote a readme file
+</code></pre><p>&#x6700;&#x65B0;&#x7684;&#x90A3;&#x4E2A;&#x7248;&#x672C;&#x201C;append GPL&#x201D;&#x5DF2;&#x7ECF;&#x770B;&#x4E0D;&#x5230;&#x4E86;&#xFF01;&#x597D;&#x6BD4;&#x4F60;&#x4ECE;21&#x4E16;&#x7EAA;&#x5750;&#x65F6;&#x5149;&#x7A7F;&#x68AD;&#x673A;&#x6765;&#x5230;&#x4E86;19&#x4E16;&#x7EAA;&#xFF0C;&#x60F3;&#x518D;&#x56DE;&#x53BB;&#x5DF2;&#x7ECF;&#x56DE;&#x4E0D;&#x53BB;&#x4E86;&#xFF0C;&#x80BF;&#x4E48;&#x529E;&#xFF1F;</p>
+<p>&#x529E;&#x6CD5;&#x5176;&#x5B9E;&#x8FD8;&#x662F;&#x6709;&#x7684;&#xFF0C;&#x53EA;&#x8981;&#x4E0A;&#x9762;&#x7684;&#x547D;&#x4EE4;&#x884C;&#x7A97;&#x53E3;&#x8FD8;&#x6CA1;&#x6709;&#x88AB;&#x5173;&#x6389;&#xFF0C;&#x4F60;&#x5C31;&#x53EF;&#x4EE5;&#x987A;&#x7740;&#x5F80;&#x4E0A;&#x627E;&#x554A;&#x627E;&#x554A;&#xFF0C;&#x627E;&#x5230;&#x90A3;&#x4E2A;<code>append GPL</code>&#x7684;<code>commit id</code>&#x662F;<code>3628164...</code>&#xFF0C;&#x4E8E;&#x662F;&#x5C31;&#x53EF;&#x4EE5;&#x6307;&#x5B9A;&#x56DE;&#x5230;&#x672A;&#x6765;&#x7684;&#x67D0;&#x4E2A;&#x7248;&#x672C;&#xFF1A;</p>
+<pre><code>$ git reset --hard 3628164
+HEAD is now at 3628164 append GPL
+</code></pre><p>&#x7248;&#x672C;&#x53F7;&#x6CA1;&#x5FC5;&#x8981;&#x5199;&#x5168;&#xFF0C;&#x524D;&#x51E0;&#x4F4D;&#x5C31;&#x53EF;&#x4EE5;&#x4E86;&#xFF0C;Git&#x4F1A;&#x81EA;&#x52A8;&#x53BB;&#x627E;&#x3002;&#x5F53;&#x7136;&#x4E5F;&#x4E0D;&#x80FD;&#x53EA;&#x5199;&#x524D;&#x4E00;&#x4E24;&#x4F4D;&#xFF0C;&#x56E0;&#x4E3A;Git&#x53EF;&#x80FD;&#x4F1A;&#x627E;&#x5230;&#x591A;&#x4E2A;&#x7248;&#x672C;&#x53F7;&#xFF0C;&#x5C31;&#x65E0;&#x6CD5;&#x786E;&#x5B9A;&#x662F;&#x54EA;&#x4E00;&#x4E2A;&#x4E86;&#x3002;</p>
+<p>&#x518D;&#x5C0F;&#x5FC3;&#x7FFC;&#x7FFC;&#x5730;&#x770B;&#x770B;<strong>readme.txt</strong>&#x7684;&#x5185;&#x5BB9;&#xFF1A;</p>
+<pre><code>$ cat readme.txt
+Git is a distributed version control system.
+Git is free software distributed under the GPL.
+</code></pre><p>&#x679C;&#x7136;&#xFF0C;&#x6211;&#x80E1;&#x6C49;&#x5C71;&#x53C8;&#x56DE;&#x6765;&#x4E86;&#x3002;</p>
+<p>Git&#x7684;&#x7248;&#x672C;&#x56DE;&#x9000;&#x901F;&#x5EA6;&#x975E;&#x5E38;&#x5FEB;&#xFF0C;&#x56E0;&#x4E3A;Git&#x5728;&#x5185;&#x90E8;&#x6709;&#x4E2A;&#x6307;&#x5411;&#x5F53;&#x524D;&#x7248;&#x672C;&#x7684;HEAD&#x6307;&#x9488;&#xFF0C;&#x5F53;&#x4F60;&#x56DE;&#x9000;&#x7248;&#x672C;&#x7684;&#x65F6;&#x5019;&#xFF0C;Git&#x4EC5;&#x4EC5;&#x662F;&#x628A;<code>HEAD</code>&#x4ECE;&#x6307;&#x5411;<code>append GPL</code>&#xFF1A;</p>
+<p><img src="http://i.imgur.com/ER76hB6.jpg" alt="git-head"></p>
+<p>&#x6539;&#x4E3A;&#x6307;&#x5411;<code>add distributed</code>&#xFF1A;</p>
+<p><img src="http://i.imgur.com/21bkKux.jpg" alt="git-head-move"></p>
+<p>&#x7136;&#x540E;&#x987A;&#x4FBF;&#x628A;&#x5DE5;&#x4F5C;&#x533A;&#x7684;&#x6587;&#x4EF6;&#x66F4;&#x65B0;&#x4E86;&#x3002;&#x6240;&#x4EE5;&#x4F60;&#x8BA9;<code>HEAD</code>&#x6307;&#x5411;&#x54EA;&#x4E2A;&#x7248;&#x672C;&#x53F7;&#xFF0C;&#x4F60;&#x5C31;&#x628A;&#x5F53;&#x524D;&#x7248;&#x672C;&#x5B9A;&#x4F4D;&#x5728;&#x54EA;&#x3002;</p>
+<p>   &#x73B0;&#x5728;&#xFF0C;&#x4F60;&#x56DE;&#x9000;&#x5230;&#x4E86;&#x67D0;&#x4E2A;&#x7248;&#x672C;&#xFF0C;&#x5173;&#x6389;&#x4E86;&#x7535;&#x8111;&#xFF0C;&#x7B2C;&#x4E8C;&#x5929;&#x65E9;&#x4E0A;&#x5C31;&#x540E;&#x6094;&#x4E86;&#xFF0C;&#x60F3;&#x6062;&#x590D;&#x5230;&#x65B0;&#x7248;&#x672C;&#x600E;&#x4E48;&#x529E;&#xFF1F;&#x627E;&#x4E0D;&#x5230;&#x65B0;&#x7248;&#x672C;&#x7684;<code>commit id</code>&#x600E;&#x4E48;&#x529E;&#xFF1F;</p>
+<p>&#x5728;Git&#x4E2D;&#xFF0C;&#x603B;&#x662F;&#x6709;&#x540E;&#x6094;&#x836F;&#x53EF;&#x4EE5;&#x5403;&#x7684;&#x3002;&#x5F53;&#x4F60;&#x7528;<code>$ git reset --hard HEAD^</code>&#x56DE;&#x9000;&#x5230;&#x201C;add distributed&#x201D;&#x7248;&#x672C;&#x65F6;&#xFF0C;&#x518D;&#x60F3;&#x6062;&#x590D;&#x5230;&#x201C;append GPL&#x201D;&#xFF0C;&#x5C31;&#x5FC5;&#x987B;&#x627E;&#x5230;<code>append GPL</code>&#x7684;<code>commit id</code>&#x3002;Git&#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x4E2A;&#x547D;&#x4EE4;<code>git reflog</code>&#x7528;&#x6765;&#x8BB0;&#x5F55;&#x4F60;&#x7684;&#x6BCF;&#x4E00;&#x6B21;&#x547D;&#x4EE4;&#xFF1A;</p>
+<pre><code>$ git reflog
+ea34578 HEAD@{0}: reset: moving to HEAD^
+3628164 HEAD@{1}: commit: append GPL
+ea34578 HEAD@{2}: commit: add distributed
+cb926e7 HEAD@{3}: commit (initial): wrote a readme file
+</code></pre><p>&#x7EC8;&#x4E8E;&#x8212;&#x4E86;&#x53E3;&#x6C14;&#xFF0C;&#x7B2C;&#x4E8C;&#x884C;&#x663E;&#x793A;<code>append GPL</code>&#x7684;<code>commit id</code>&#x662F;<code>3628164</code>&#xFF0C;&#x73B0;&#x5728;&#xFF0C;&#x4F60;&#x53C8;&#x53EF;&#x4EE5;&#x4E58;&#x5750;&#x65F6;&#x5149;&#x673A;&#x56DE;&#x5230;&#x672A;&#x6765;&#x4E86;&#x3002;</p>
+<h2 id="%E5%B0%8F%E7%BB%93">&#x5C0F;&#x7ED3;</h2>
+<p>&#x73B0;&#x5728;&#x603B;&#x7ED3;&#x4E00;&#x4E0B;&#xFF1A;</p>
+<ul>
+<li><code>HEAD</code>&#x6307;&#x5411;&#x7684;&#x7248;&#x672C;&#x5C31;&#x662F;&#x5F53;&#x524D;&#x7248;&#x672C;&#xFF0C;&#x56E0;&#x6B64;&#xFF0C;Git&#x5141;&#x8BB8;&#x6211;&#x4EEC;&#x5728;&#x7248;&#x672C;&#x7684;&#x5386;&#x53F2;&#x4E4B;&#x95F4;&#x7A7F;&#x68AD;&#xFF0C;&#x4F7F;&#x7528;&#x547D;&#x4EE4;<code>git reset --hard commit_id</code>&#x3002;</li>
+<li>&#x7A7F;&#x68AD;&#x524D;&#xFF0C;&#x7528;<code>git log</code>&#x53EF;&#x4EE5;&#x67E5;&#x770B;&#x63D0;&#x4EA4;&#x5386;&#x53F2;&#xFF0C;&#x4EE5;&#x4FBF;&#x786E;&#x5B9A;&#x8981;&#x56DE;&#x9000;&#x5230;&#x54EA;&#x4E2A;&#x7248;&#x672C;&#x3002;</li>
+<li>&#x8981;&#x91CD;&#x8FD4;&#x672A;&#x6765;&#xFF0C;&#x7528;<code>git reflog</code>&#x67E5;&#x770B;&#x547D;&#x4EE4;&#x5386;&#x53F2;&#xFF0C;&#x4EE5;&#x4FBF;&#x786E;&#x5B9A;&#x8981;&#x56DE;&#x5230;&#x672A;&#x6765;&#x7684;&#x54EA;&#x4E2A;&#x7248;&#x672C;&#x3002;</li>
+</ul>
+
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="../时光机穿梭.html" class="navigation navigation-prev " aria-label="Previous page: 时光机穿梭"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="../时光机穿梭/工作区和暂存区.html" class="navigation navigation-next " aria-label="Next page: 工作区和暂存区"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+<script src="../gitbook/app.js"></script>
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-livereload/plugin.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"fontSettings":{"theme":null,"family":"sans","size":2}};
+    gitbook.start(config);
+});
+</script>
+
+        
+    </body>
+    
+</html>
